@@ -460,6 +460,7 @@ MonoBehaviour:
   powerUpTemplateList:
   - {fileID: 1344436862}
   spawnInterval: 8
+  removeInterval: 12
 --- !u!1 &560028794
 GameObject:
   m_ObjectHideFlags: 0
