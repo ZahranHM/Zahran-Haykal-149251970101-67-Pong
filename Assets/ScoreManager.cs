@@ -30,6 +30,11 @@ public class ScoreManager : MonoBehaviour
         }
     }
 
+    public void OutBall()
+    {
+        ball.ResetBall();
+    }
+
     public void GameOver()
     {
         SceneManager.LoadScene("MainMenu");

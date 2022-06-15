@@ -43,7 +43,6 @@ public class PowerUpManager : MonoBehaviour
             removetimer -= removeInterval;
             rtpluser = 0;
         }
-
     }
 
     public void GenerateRandomPowerUp()

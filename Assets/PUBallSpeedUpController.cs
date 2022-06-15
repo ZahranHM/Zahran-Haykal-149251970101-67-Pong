@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PUSpeedUpController : MonoBehaviour
+public class PUBallSpeedUpController : MonoBehaviour
 {
     public Collider2D ball;
     public float magnitude;
@@ -12,9 +12,8 @@ public class PUSpeedUpController : MonoBehaviour
     {
         if (collision == ball)
         {
-            ball.GetComponent<BallController>().ActivatePUSpeedUp(magnitude);
+            ball.GetComponent<BallController>().ActivatePUBallSpeedUp(magnitude);
             manager.RemovePowerUp(gameObject);
         }
     }
-
 }

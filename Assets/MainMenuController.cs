@@ -10,6 +10,11 @@ public class MainMenuController : MonoBehaviour
         SceneManager.LoadScene("Gameplay");
     }
 
+    public void OpenCredit()
+    {
+        SceneManager.LoadScene("Credit");
+    }
+
     public void OpenAuthor()
     {
         Debug.Log("Created By Zahran Haykal - 149251970101-67");

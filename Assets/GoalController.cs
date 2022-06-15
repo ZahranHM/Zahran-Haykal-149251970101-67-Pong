@@ -6,6 +6,7 @@ public class GoalController : MonoBehaviour
 {
     public Collider2D ball;
     public bool isLeftGoal;
+    public bool isOutArea;
     public ScoreManager manager;
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -16,10 +17,18 @@ public class GoalController : MonoBehaviour
             {
                 manager.AddRightScore(1);
             }
-            else
+            else 
             {
-                manager.AddLeftScore(1);
+                if (isOutArea)
+                {
+                    manager.OutBall();
+                }
+                else
+                {
+                    manager.AddLeftScore(1);
+                }
             }
         }
+
     }
 }
