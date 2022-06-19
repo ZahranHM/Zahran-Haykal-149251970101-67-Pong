@@ -8,47 +8,19 @@ public class PaddleController : MonoBehaviour
     public KeyCode upKey;
     public KeyCode downKey;
     private Rigidbody2D rig;
-    public bool havepowerup = false;
-    private float PUtimer;
-    private float PUTpluser = 0;
-    private int normalspeed;
-    private Vector3 normalsize;
 
     void Start()
     {
-        havepowerup = false;
         rig = GetComponent<Rigidbody2D>();
-        normalspeed = speed;
-        normalsize = transform.localScale;
     }
 
     void Update()
     {
-        PUtimer += PUTpluser;
-        if (PUtimer > 5)
-        {
-            if (speed != normalspeed)
-            {
-                speed = normalspeed;
-            }
-            if (transform.localScale != normalsize)
-            {
-                transform.localScale = normalsize;
-            }
-            PUTpluser = 0;
-            PUtimer = 0;
-        }
-
         // get input
         Vector2 movement = GetInput();
 
         // move object 
         MoveObject(movement);
-
-        if (havepowerup)
-        {
-            PUTpluser = Time.deltaTime;
-        }
 
         Vector2 GetInput()
         {

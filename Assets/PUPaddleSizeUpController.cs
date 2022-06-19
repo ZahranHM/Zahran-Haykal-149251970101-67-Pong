@@ -7,6 +7,7 @@ public class PUPaddleSizeUpController : MonoBehaviour
     public Collider2D ball;
     public float multiply;
     public PowerUpManager manager;
+    private GameObject thepaddle;
 
     private float PUPSiUTimer;
     private float PUPSiUTimerpluser = 0;
@@ -14,8 +15,9 @@ public class PUPaddleSizeUpController : MonoBehaviour
     void Update()
     {
         PUPSiUTimer += PUPSiUTimerpluser;
-        if (PUPSiUTimer > 5)
+        if (PUPSiUTimer > 8)
         {
+            DeactivatePUPaddleSizeUp(thepaddle, multiply);
             PUPSiUTimer -= PUPSiUTimer;
             PUPSiUTimerpluser = 0;
             manager.RemovePowerUp(gameObject);
@@ -27,9 +29,15 @@ public class PUPaddleSizeUpController : MonoBehaviour
         if (collision == ball)
         {
             ball.GetComponent<BallController>().ActivatePUPaddleSizeUp(multiply);
-            ball.GetComponent<BallController>().TellTheBouncer();
+            thepaddle = ball.GetComponent<BallController>().bouncer;
             PUPSiUTimerpluser = Time.deltaTime;
             transform.position = new Vector2(10, 10);
         }
+    }
+
+    private void DeactivatePUPaddleSizeUp(GameObject thepaddle, float multiply)
+    {
+        float temp = thepaddle.transform.localScale.y / multiply;
+        thepaddle.transform.localScale -= new Vector3(0, (thepaddle.transform.localScale.y) - temp, 0);
     }
 }

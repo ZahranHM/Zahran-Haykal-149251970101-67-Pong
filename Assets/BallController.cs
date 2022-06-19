@@ -33,11 +33,6 @@ public class BallController : MonoBehaviour
         transform.position = new Vector3(resetPosition.x, resetPosition.y, 1);
     }
 
-    public void TellTheBouncer()
-    {
-        bouncer.GetComponent<PaddleController>().havepowerup = true;
-    }
-
     public void ActivatePUBallSpeedUp(float magnitude)
     {
         rig.velocity *= magnitude;
