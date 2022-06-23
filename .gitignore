@@ -7,3 +7,8 @@ obj/*
 .vsconfig 
 *.sln 
 *.csproj 
+
+Assets/* 
+Library/* 
+ProjectSettings/* 
+UserSettings/* 
